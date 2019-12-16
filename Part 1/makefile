@@ -4,11 +4,11 @@ OBJECTS_MAIN=main.o
 OBJECTS_LIB = isort.o
 FLAGS= -Wall -fPIC
 
-all: isorts isortd mains maind
+all: isorts isortd mains isort
 mains: $(OBJECTS_MAIN) libmyisort.a
 	$(CC) $(FLAGS) -o mains $(OBJECTS_MAIN) libmyisort.a
-maind: $(OBJECTS_MAIN) libmyisort.so
-	$(CC) $(FLAGS) -o maind $(OBJECTS_MAIN) ./libmyisort.so
+isort: $(OBJECTS_MAIN) libmyisort.so
+	$(CC) $(FLAGS) -o isort $(OBJECTS_MAIN) ./libmyisort.so
 isorts: libmyisort.a
 libmyisort.a: $(OBJECTS_LIB) isort.h
 	$(AR) libmyisort.a $(OBJECTS_LIB)
@@ -23,4 +23,4 @@ isort.o: isort.c isort.h
 .PHONY: clean all isorts isortd
 
 clean:
-	rm -f *.o *.a *.so mains maind
+	rm -f *.o *.a *.so mains isort

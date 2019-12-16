@@ -19,7 +19,7 @@ int Length(char ch[])
 {
 	int length = 0;
 
-	while (ch[length]||ch[length]=='/n'||ch[length]=='\t'||ch[length]==' ')
+	while (ch[length]||ch[length]=='\n'||ch[length]=='\t'||ch[length]==' ')
 	{
 		length++;
 	}

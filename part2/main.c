@@ -5,7 +5,7 @@
 
 int main()
 {
-	 char text[LINE];
+	 
 	 char first_line[LINE]; //to get the first line, the search querry and the function to perform
 	fgets(first_line, LINE , stdin); // reads the first line
 	printf("The First line is:  %s",first_line);
